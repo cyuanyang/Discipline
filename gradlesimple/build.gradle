@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 
+
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
@@ -19,10 +20,54 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        debug{}
+        mytest{}
     }
+
+    applicationVariants.all{ variant->
+        println "variant----variant.buildType.name ="+variant.buildType.name +
+                "\nvariant.name=" + variant.name+
+                "\nvariant.baseName=" + variant.baseName
+        def ofs = variant.outputs
+        println "**********************************************************************"
+        ofs.each {o ->
+            println "o----name = "+o.name +
+                    " \nbaseName="+o.baseName +
+                    " \noutfile = "+o.outputFile +
+                    " \nprocessManifest="+o.processManifest
+
+            //改manifest
+            o.processManifest.doLast {
+                //do things
+            }
+
+            //改名字
+            def file = o.outputFile;
+            def fileName = "myApk.apk"
+            o.outputFile = new File(file.parent, fileName)
+            //等等
+            println "------end------"
+        }
+    }
+
+
+    productFlavors {
+
+        flavor1 {
+            packageName "com.cyy.flavor1"
+            versionCode 20
+            //manifestPlaceholders = ["place":"value" , "place1":"value1"]
+        }
+
+        flavor2 {
+            packageName "com.cyy.flavor2"
+            versionCode 18
+        }
+    }
+
+
+
 }
-
-
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -33,6 +78,7 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
 }
+
 
 //定义变量
 task defSimple{
@@ -86,10 +132,14 @@ task controlSimple{
 
         //forin
         for (e in arr){
-            println "arr ele="+e
+            println "in arr ele="+e
         }
         for (e in map){
-            println "map key="+e.getKey() + " value = " +e.getValue()
+            println "in map key="+e.getKey() + " value = " +e.getValue()
+        }
+        //each遍历
+        map.each {e->
+            println "each map key="+e.getKey() + " value = " +e.getValue()
         }
     }
 }
@@ -106,13 +156,12 @@ task methodSimple{
     }
 }
 
-def closureMethod(c){
+def static closureMethod(c){
     c "closureMethod "
 }
 
 task closureSimple{
     doLast{
-
         //定义
         def closure = {
             println "my closure";
@@ -142,7 +191,33 @@ task closureSimple{
         }
     }
 }
+apply plugin: MyPlugin
+myAndroid{
+    version = 1001
+    name = "hi android"
 
-class MySimple{
+}
 
+class MyPlugin implements Plugin<Project>{
+
+    @Override
+    void apply(Project target) {
+        target.extensions.create("myAndroid", MyAndroid)
+
+        target.task('myassemable') {
+            doLast{
+                ///
+                // do other thing
+                println "Version is " + project.myAndroid.version
+                println "name is " + project.myAndroid.name
+            }
+        }
+
+    }
+
+}
+
+class MyAndroid{
+    def version = 100
+    def name = "Android"
 }
