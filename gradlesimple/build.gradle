@@ -1,0 +1,148 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        applicationId "com.cyy.gradlesimple"
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+}
+
+//定义变量
+task defSimple{
+    doLast{
+        def i = 1
+        def str1 = " def adb"
+        def c = 'c'
+
+        //java 语法
+        int m = 998
+        String s = "java string"
+
+        println " i = "+i +" str1 = "+str1
+        println " m = "+m +" s = "+s
+    }
+}
+
+task collectionSimple{
+    doLast{
+        //List
+        def arr = ["1" , "2" , "3"];
+        arr.add("4")
+        arr[0] = 10;
+        println arr
+        println arr[1]
+
+        //映射 (map)
+        def map = ["key1":"value1" , "key2":"value2"]
+        map.put("key3","value3");
+        map["key1"] = "value_modify"
+        println map
+        println map["key2"]
+    }
+}
+
+task controlSimple{
+    doLast{
+        def arr = ["1" , "2" , "3"];
+        def map = ["key1":"value1" , "key2":"value2"]
+        //fori
+        for (int i = 0; i < arr.size(); i++) {
+            println "arr[i]="+arr[i]
+        }
+
+        for ( i in 0..<arr.size()){
+            println "..第几个="+i
+        }
+        for ( i in 0..arr.size()){
+            println "..第几个="+i
+        }
+
+        //forin
+        for (e in arr){
+            println "arr ele="+e
+        }
+        for (e in map){
+            println "map key="+e.getKey() + " value = " +e.getValue()
+        }
+    }
+}
+
+def method1(str1, str2){
+    println("str1="+str1 + " str2="+str2)
+}
+
+task methodSimple{
+    doLast{
+        method1("1" , "2")
+        //括号可以省略
+        method1 "3" , "4"
+    }
+}
+
+def closureMethod(c){
+    c "closureMethod "
+}
+
+task closureSimple{
+    doLast{
+
+        //定义
+        def closure = {
+            println "my closure";
+        }
+        //调用
+        closure()
+        //call调用
+        closure.call()
+
+        def closureParam = {param->
+            println("param ="+param);
+        }
+        closureParam("hello")
+
+        //隐式的参数 it
+        def closure2 = {
+            println "param = " +it;
+        }
+        closure2("hello world")
+
+        //当作方法的值传入
+        closureMethod closure2
+
+        //这样眼熟不？
+        closureMethod{
+            println "hello world"
+        }
+    }
+}
+
+class MySimple{
+
+}

@@ -19,6 +19,38 @@ android {
     }
 }
 
+task hello {
+
+    def i = 1;
+    doFirst{
+        println "do first 1"
+        i++;
+    }
+
+    doLast{
+        def j = i+ 9
+        println j
+        println "do last 1"
+    }
+
+    doFirst{
+        println "do first 2"
+        i++;
+    }
+
+    doFirst{
+        println "do first 3"
+        i++;
+    }
+
+    doLast{
+        def j = i+ 9
+        println j
+        println "do last 2"
+    }
+
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -27,4 +59,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
+
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
 }
