@@ -1,1 +1,3 @@
-gradle
+gradle的学习记录和demo
+
+主要的代码在build.gradle文件当中
