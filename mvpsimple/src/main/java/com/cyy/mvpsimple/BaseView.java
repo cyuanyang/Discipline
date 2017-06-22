@@ -7,6 +7,4 @@ package com.cyy.mvpsimple;
 
 public interface BaseView<T extends BasePresent> {
 
-    void setPresent(T present);
-
 }

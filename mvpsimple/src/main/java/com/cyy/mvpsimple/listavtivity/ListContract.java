@@ -1,5 +1,6 @@
 package com.cyy.mvpsimple.listavtivity;
 
+
 import com.cyy.mvpsimple.BasePresent;
 import com.cyy.mvpsimple.BaseView;
 
@@ -11,9 +12,7 @@ import com.cyy.mvpsimple.BaseView;
 public interface ListContract {
 
     interface Present extends BasePresent{
-
         void addNewMessage();
-
     }
 
     interface View extends BaseView<Present>{

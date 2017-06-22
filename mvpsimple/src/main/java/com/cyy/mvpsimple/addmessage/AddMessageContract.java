@@ -12,9 +12,10 @@ public interface AddMessageContract {
 
     interface View extends BaseView<Present>{
 
+        void complete();
     }
 
     interface Present extends BasePresent{
-
+        void addNewMessage(String message);
     }
 }

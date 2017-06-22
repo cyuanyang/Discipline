@@ -51,11 +51,6 @@ public class ListActivity extends AppCompatActivity implements ListContract.View
     }
 
     @Override
-    public void setPresent(ListContract.Present present) {
-        mPresent = present;
-    }
-
-    @Override
     public void showNewMessageView() {
         startActivity(new Intent(this , AddMessageActivity.class));
     }

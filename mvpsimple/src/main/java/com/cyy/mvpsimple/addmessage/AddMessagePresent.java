@@ -12,6 +12,10 @@ public class AddMessagePresent implements AddMessageContract.Present {
     public AddMessagePresent(AddMessageContract.View view){
         mView = view;
 
+    }
+
+    @Override
+    public void addNewMessage(String message) {
 
     }
 }
