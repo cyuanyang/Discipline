@@ -13,13 +13,11 @@ public interface ListContract {
 
     interface Present extends BasePresent{
         void addNewMessage();
+        void showMessage();
     }
 
     interface View extends BaseView<Present>{
-
-
         void showNewMessageView();
-
     }
 
 

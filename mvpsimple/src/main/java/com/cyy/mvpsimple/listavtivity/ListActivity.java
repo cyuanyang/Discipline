@@ -4,13 +4,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.cyy.mvpsimple.Message;
 import com.cyy.mvpsimple.R;
 import com.cyy.mvpsimple.addmessage.AddMessageActivity;
+import com.fire.table.DBBase;
+
+import java.util.List;
 
 public class ListActivity extends AppCompatActivity implements ListContract.View{
 
@@ -24,6 +29,8 @@ public class ListActivity extends AppCompatActivity implements ListContract.View
         initView();
 
         mPresent = new ListPresent(this);
+
+        mPresent.showMessage();
     }
 
     private void initView() {
