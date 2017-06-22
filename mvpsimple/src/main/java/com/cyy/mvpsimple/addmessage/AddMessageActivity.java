@@ -17,9 +17,9 @@ import butterknife.OnClick;
 
 public class AddMessageActivity extends AppCompatActivity implements AddMessageContract.View {
 
-    @BindView(R.id.editText)  EditText editText;
+    @BindView(R.id.editText) EditText editText;
 
-    private AddMessagePresent mPresent;
+    private AddMessageContract.Present mPresent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
