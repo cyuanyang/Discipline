@@ -7,4 +7,5 @@ package com.cyy.mvpsimple;
  */
 
 public interface BasePresent {
+
 }

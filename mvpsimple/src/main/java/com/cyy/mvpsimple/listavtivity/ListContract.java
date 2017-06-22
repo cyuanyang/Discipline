@@ -10,16 +10,16 @@ import com.cyy.mvpsimple.BaseView;
 
 public interface ListContract {
 
-    interface ListPresent extends BasePresent{
+    interface Present extends BasePresent{
 
-
+        void addNewMessage();
 
     }
 
-    interface View extends BaseView<ListPresent>{
+    interface View extends BaseView<Present>{
 
 
-
+        void showNewMessageView();
 
     }
 
