@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00ff00"
+        android:padding="10dp">
+
+        <Button
+            android:id="@+id/btn1234"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1234"/>
+
+        <ImageView
+            android:id="@+id/itemImageView"
+            android:layout_toRightOf="@+id/btn1234"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"/>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:padding="10dp"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        android:text="Neo的判断非常准确。在Matrix中Smith最终突破了Seraph这道防火墙，侵入了核心Oracle。由于Oracle是整个Matrix的核心，拥有最高权限，因此当Oracle被Smith占据之后，整个Matrix中所有的系统程序都对Smith开放了，Smith获得了Matrix最高系统权限。而Matrix直接和机械世界相连，Smith将可以通过Matrix占领整个机械世界。于是机械世界封闭了和Matrix所有连接通道以作为抵抗，但机械世界也知道这不是长久之计，Smith早晚会突破封锁浸入机械世界。"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ff0000"
+        android:padding="10dp"
+        android:orientation="horizontal">
+        <ImageButton
+            android:id="@+id/imageBtn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"/>
+        <ImageButton
+            android:id="@+id/imageBtn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"/>
+        <ImageButton
+            android:id="@+id/imageBtn3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"/>
+    </LinearLayout>
+</LinearLayout>

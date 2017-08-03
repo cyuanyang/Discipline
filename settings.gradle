@@ -1,1 +1,1 @@
-include ':app', ':gradlesimple', ':mvpsimple', ':dbfire'
+include ':app', ':gradlesimple', ':mvpsimple', ':dbfire', ':interceptorsimple'

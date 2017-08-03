@@ -1,0 +1,39 @@
+apply plugin: 'groovy'
+
+//上传插件到仓库需要 非必要
+apply plugin: 'maven'
+
+dependencies {
+    compile gradleApi()//gradle sdk
+    compile localGroovy()//groovy sdk
+
+    compile 'com.android.tools.build:gradle:2.3.1'
+
+    compile 'org.ow2.asm:asm:5.0.3'
+    compile 'org.ow2.asm:asm-commons:5.0.3'
+
+}
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+//group='com.cyy.gather'
+//version='1.0'
+//
+//uploadArchives {
+//    doFirst {
+//        println "ddddd"
+//    }
+//    repositories {
+//
+//        mavenDeployer {
+//            repository(url: uri('../repo'))
+//
+//        }
+//
+//    }
+//}
+
+
