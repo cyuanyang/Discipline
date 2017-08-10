@@ -18,10 +18,15 @@ import org.apache.commons.io.FileUtils
 public class GatherTransform extends Transform{
 
     Project project
+    boolean isLibrary = false
 
     // 构造函数，我们将Project保存下来备用
     public GatherTransform(Project project) {
         this.project = project
+    }
+    public GatherTransform(Project project , boolean isLibrary) {
+        this.project = project
+        this.isLibrary = isLibrary
     }
 
     // 设置我们自定义的Transform对应的Task名称
@@ -40,7 +45,11 @@ public class GatherTransform extends Transform{
     // 指定Transform的作用范围
     @Override
     Set<QualifiedContent.Scope> getScopes() {
-        return TransformManager.SCOPE_FULL_PROJECT
+        if (isLibrary){
+            return TransformManager.SCOPE_FULL_LIBRARY
+        }else {
+            return TransformManager.SCOPE_FULL_PROJECT
+        }
     }
 
     @Override

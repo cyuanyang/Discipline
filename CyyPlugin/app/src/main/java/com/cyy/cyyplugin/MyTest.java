@@ -18,5 +18,7 @@ public class MyTest {
     @Override
     protected void finalize() throws Throwable {
         super.finalize();
+
+        MyTest.this.wait(12);
     }
 }

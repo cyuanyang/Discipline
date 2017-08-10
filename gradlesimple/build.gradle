@@ -187,6 +187,7 @@ task closureSimple{
     }
 }
 apply plugin: MyPlugin
+
 myAndroid{
     version = 1001
     name = "hi android"

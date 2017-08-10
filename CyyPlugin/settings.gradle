@@ -1,1 +1,1 @@
-include ':app', ':gatherlib'
+include ':app', ':gatherlib', ':testlibrary'

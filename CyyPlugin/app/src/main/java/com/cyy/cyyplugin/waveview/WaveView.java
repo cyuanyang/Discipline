@@ -139,7 +139,7 @@ public class WaveView extends View {
             // 达到速度阀值，发出提示
             if (speed >= SPEED_SHRESHOLD){
                 speed = speed>400f?400f:speed;
-                Log.e("speed"  , "speed =="+speed);
+//                Log.e("speed"  , "speed =="+speed);
                 mStartScaleY = speed/200;
                 if ((mWaveScaleAnim!=null&&!mWaveScaleAnim.isStarted() || mWaveScaleAnim == null)){
                     start();
@@ -273,7 +273,7 @@ public class WaveView extends View {
 
     public void setWaveScaleY(float waveScaleY){
         this.mWaveScaleY = waveScaleY;
-        Log.e("mWaveScaleY " , "mWaveScaleY="+mWaveScaleY);
+//        Log.e("mWaveScaleY " , "mWaveScaleY="+mWaveScaleY);
     }
 
     public void start(){
@@ -313,7 +313,7 @@ public class WaveView extends View {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 float value = (float) animation.getAnimatedValue();
-                Log.e("value = ", "value == "+ value);
+//                Log.e("value = ", "value == "+ value);
             }
         });
         mWaveScaleAnim.start();

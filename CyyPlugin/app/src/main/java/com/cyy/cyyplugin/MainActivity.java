@@ -37,6 +37,10 @@ public class MainActivity extends AppCompatActivity {
 
     WaveHelper helper;
 
+    final OkHttpClient client = new OkHttpClient.Builder()
+            .dispatcher(new Dispatcher())
+            .build();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,14 +79,19 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
-                final OkHttpClient client = new OkHttpClient.Builder()
-                        .dispatcher(new Dispatcher())
-                        .build();
-
                 new Thread(new Runnable() {
+
                     @Override
                     public void run() {
+                        Log.e("b----" , System.currentTimeMillis()+"");
+//                        synchronized (MainActivity.this){
+//                            try {
+//                                MainActivity.this.wait(2000);
+//                            } catch (InterruptedException e) {
+//                                e.printStackTrace();
+//                            }
+//                        }
+                        Log.e("a----" , System.currentTimeMillis()+"");
                         Request request = new Request.Builder()
                                 .url("http://www.baidu.com")
                                 .get()
