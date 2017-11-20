@@ -1,29 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<view xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/contentLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ff0"
     android:orientation="vertical"
     android:padding="15dp"
+    class = "com.cyy.cyyplugin.Main2Activity$YellowLayout"
     tools:context="com.cyy.cyyplugin.Main2Activity">
 
-
-    <Button
-        android:id="@+id/btn1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="1" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="#00ffff"
-        android:gravity="center"
-        android:text="qwsgajhsah" />
-
-    <LinearLayout
+    <view class="com.cyy.cyyplugin.Main2Activity$PurpleLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -37,33 +24,46 @@
             android:layout_height="wrap_content"
             android:text="2" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#00ff00"
-            android:text="121231" />
+        <FrameLayout
+            android:layout_width="120dp"
+            android:layout_height="120dp">
+            <view class="com.cyy.cyyplugin.Main2Activity$GreenLayout"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="#000"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp">
+            </view>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher_round" />
+            <view class="com.cyy.cyyplugin.Main2Activity$GreenLayout"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="#00ff00">
+            </view>
 
-        <LinearLayout
+
+        </FrameLayout>
+
+
+        <view class="com.cyy.cyyplugin.Main2Activity$RedLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#ff0000"
             android:orientation="vertical"
+            android:layout_marginLeft="10dp"
             android:padding="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="#00ff00"
                 android:text="dasadasdahjdbsahjdbja" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="#000fff"
                 android:src="@mipmap/ic_launcher" />
-        </LinearLayout>
-    </LinearLayout>
-</LinearLayout>
+        </view>
+    </view>
+</view>
