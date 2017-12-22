@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:text="2" />
 
-        <FrameLayout
+        <view class="com.cyy.cyyplugin.Main2Activity$MyFrameLayout"
             android:layout_width="120dp"
             android:layout_height="120dp">
             <view class="com.cyy.cyyplugin.Main2Activity$GreenLayout"
@@ -42,7 +42,7 @@
             </view>
 
 
-        </FrameLayout>
+        </view>
 
 
         <view class="com.cyy.cyyplugin.Main2Activity$RedLayout"
